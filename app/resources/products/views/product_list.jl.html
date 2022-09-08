@@ -1,0 +1,17 @@
+
+
+<h1 class="container">Look at all these!</h1>
+<!--<% products %>-->
+
+
+<%
+if ! isempty(products)
+  for_each(products) do product
+    partial(joinpath(Genie.config.path_resources, "products", "views", "product.jl.html"), product = product)
+  end
+else
+  partial(joinpath(Genie.config.path_resources, "products", "views", "_no_results.jl.html"))
+end
+
+%>
+

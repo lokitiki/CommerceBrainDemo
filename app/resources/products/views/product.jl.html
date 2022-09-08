@@ -1,0 +1,12 @@
+<div class="container">
+    <div><% product.name %></div>
+    <div><% product.description %></div>
+    <div><% product.active_price %></div>
+    <div><% product.caption %></div>
+    <div><form action="/checkout" method="POST">
+        <!-- Note: If using PHP set the action to /create-checkout-session.php -->
+        
+        <input type="hidden" name="priceId" value="$(product.price_id)"/>
+        <button type="submit">Checkout</button>
+      </form></div>
+  </div>
